@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "677099415435",
+    "firebase_url": "https://csintranet-ba59e.firebaseio.com",
+    "project_id": "csintranet-ba59e",
+    "storage_bucket": "csintranet-ba59e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677099415435:android:12df76b93632f4e7ae318e",
+        "android_client_info": {
+          "package_name": "com.csi.csintranetapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677099415435-pdc6vctsv46akeomedc9oq25ih672qvp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.csi.csintranetapp",
+            "certificate_hash": "f8b26c476233ad59e66b8d7d68b9ee14bf8a0a13"
+          }
+        },
+        {
+          "client_id": "677099415435-4dss1s074odpifhr8rkkg2dhm2blofjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9KCq5pcvmolUYg9J__oBo4lurDjYehlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677099415435-4dss1s074odpifhr8rkkg2dhm2blofjm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "677099415435-cboq7b60qvkd80fmci16ie8v37675k0f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.csi.csintranet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

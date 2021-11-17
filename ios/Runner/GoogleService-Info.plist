@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>677099415435-9k65a8etae5f638134qgdj2edpk32aq1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.677099415435-9k65a8etae5f638134qgdj2edpk32aq1</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>677099415435-oul69gmk3r92pc3rciiu3dd30rnfepjm.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAyfXN9um7_OddIngMmyxUsfdNK3hhvSjU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>677099415435</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.csi.csintranet-app</string>
+	<key>PROJECT_ID</key>
+	<string>csintranet-ba59e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>csintranet-ba59e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:677099415435:ios:f3d0cba29eea7c81ae318e</string>
+	<key>DATABASE_URL</key>
+	<string>https://csintranet-ba59e.firebaseio.com</string>
+</dict>
+</plist>
