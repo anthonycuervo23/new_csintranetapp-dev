@@ -10,16 +10,28 @@ import 'package:new_csintranetapp/services/network_status_service.dart';
 //TODO: corregir falla con iOS (NetworkStatus esta siempre offline)
 
 class DataScreen extends StatelessWidget {
-  const DataScreen({Key? key}) : super(key: key);
+    // DataScreen({Key? key}) : super(key: key);
+    // String _url = "";
+    // DataScreen(String url, {Key? key}) : super(key: key){
+    //   _url = url;
+    // }
+    final  String url;
 
-  @override
+    const DataScreen({
+      Key? key,
+       required this.url,
+    }) : super(key: key);
+
+
+
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: StreamProvider(
         create: (_) => NetworkStatusService().networkStatusController.stream,
         initialData: NetworkStatus.online,
-        child: const NetworkAwareWidget(
-          onlineChild: SplashScreen(),
+        child:  NetworkAwareWidget(
+          onlineChild: SplashScreen(url: url),
           offlineChild: NoInternetConnection(),
         ),
       ),

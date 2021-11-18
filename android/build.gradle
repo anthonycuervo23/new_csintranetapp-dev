@@ -2,6 +2,7 @@ buildscript {
     ext.kotlin_version = '1.5.31'
     repositories {
         google()
+        gradlePluginPortal()
         mavenCentral()
         maven { url 'https://plugins.gradle.org/m2/' }
     }
@@ -19,6 +20,7 @@ buildscript {
 allprojects {
     repositories {
         google()
+        gradlePluginPortal()
         mavenCentral()
     }
 }

@@ -42,7 +42,7 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^19.3.45-beta
 
   # PUSH NOTIFICATION
-  onesignal_flutter: ^3.2.4
+  onesignal_flutter: ^3.0.0
 
 dev_dependencies:
   flutter_test:

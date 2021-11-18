@@ -9,22 +9,41 @@ import 'package:new_csintranetapp/utils/images.dart';
 import 'package:new_csintranetapp/utils/strings.dart';
 
 class SplashScreen extends StatelessWidget {
+  //
+  // const SplashScreen(String url, {Key? key}) : super(key: key){
+  //   _url = url;
+  // }
+  final String url;
+
   const SplashScreen({
     Key? key,
+    required this.url,
   }) : super(key: key);
 
+
+  // const SplashScreen(String url,{
+  //   Key? key,
+  // }) : super(key: key){
+  //
+  //   _url = url;
+  // }
   String initialURL() {
-    bool notFirstTime = getBoolAsync('not_first_time');
-    if (notFirstTime == true) {
-      return Constants.url;
-    } else {
-      setValue('not_first_time', true);
-      var url = Uri.parse(Constants.url);
-      var queryParams = ((url.hasQuery) ? '&' : '?') +
-          "device_id=" +
-          getStringAsync('deviceId');
-      var newUrl = url.toString() + queryParams;
-      return newUrl;
+    if(url.isEmpty) {
+      bool notFirstTime = getBoolAsync('not_first_time');
+      if (notFirstTime == true) {
+        return Constants.url;
+      } else {
+        setValue('not_first_time', true);
+        var url = Uri.parse(Constants.url);
+        var queryParams = ((url.hasQuery) ? '&' : '?') +
+            "device_id=" +
+            getStringAsync('deviceId');
+        var newUrl = url.toString() + queryParams;
+        return newUrl;
+      }
+    }else{
+
+      return url;
     }
   }
 

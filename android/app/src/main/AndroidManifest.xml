@@ -23,8 +23,7 @@
    <application
         android:label="CSIntranet"
         android:icon="@mipmap/ic_launcher">
-
-        <activity
+       <activity
             android:exported="true"
             android:name="com.csi.csintranetapp.MainActivity"
             android:launchMode="singleTop"

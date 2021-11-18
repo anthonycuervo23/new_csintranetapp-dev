@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:new_csintranetapp/services/navigation_service.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -97,13 +98,75 @@ class _HomeScreenState extends State<HomeScreen>
   }
 
   Future<void> init() async {
-    if (webViewController != null) {
-      await webViewController!
-          .loadUrl(urlRequest: URLRequest(url: Uri.parse(widget.myURL)));
-      print('test ${Uri.parse(widget.myURL)}');
+    bool notFirstTime = getBoolAsync('not_first_notification');
+
+    if (notFirstTime == true) {
+      var url = widget.myURL;
+      if(!url.isEmpty) {
+        if (url.endsWith('PDF') || url.endsWith('pdf')) {
+          await NavigationService.navigateTo(PdfViewerScreen(
+              title: url
+                  .split("/")
+                  .last
+                  .split(".")[0], url: url));
+        } else {
+          if (webViewController != null) {
+            await webViewController!
+                .loadUrl(urlRequest: URLRequest(url: Uri.parse(widget.myURL)));
+            print('test ${Uri.parse(widget.myURL)}');
+          } else {
+            log("aun no se ha creado el controlador");
+          }
+          // await NavigationService.replaceTo(HomeScreen(myURL: url));
+        }
+      }
     } else {
-      log("aun no se ha creado el controlador");
+      await setValue('not_first_notification', true);
+
+      var url = widget.myURL;
+
+      if (url != null && !url.isEmpty) {
+        if (url.toString().endsWith('PDF') || url.toString().endsWith('pdf')) {
+          await NavigationService.navigateTo(PdfViewerScreen(
+              title: url.toString().split("/").last.split(".")[0],
+              url: url.toString()));
+        } else {
+          var url = Uri.parse(widget.myURL);
+          var queryParams = ((url.hasQuery) ? '&' : '?') +
+              "device_id=" +
+              getStringAsync('deviceId');
+          var newUrl = url.toString() + queryParams;
+          if (webViewController != null) {
+            await webViewController!
+                .loadUrl(urlRequest: URLRequest(url: Uri.parse(newUrl)));
+            print('test ${Uri.parse(newUrl)}');
+          } else {
+            log("aun no se ha creado el controlador");
+          }
+          // await NavigationService.replaceTo(HomeScreen(myURL: newUrl));
+        }
+      } else {
+        url = Constants.url;
+        if (webViewController != null) {
+          await webViewController!
+              .loadUrl(urlRequest: URLRequest(url: Uri.parse(url)));
+          print('test ${Uri.parse(url)}');
+        } else {
+          log("aun no se ha creado el controlador");
+        }
+        // await NavigationService.replaceTo(HomeScreen(myURL: url));
+      }
     }
+
+
+
+    // if (webViewController != null) {
+    //   await webViewController!
+    //       .loadUrl(urlRequest: URLRequest(url: Uri.parse(widget.myURL)));
+    //   print('test ${Uri.parse(widget.myURL)}');
+    // } else {
+    //   log("aun no se ha creado el controlador");
+    // }
 
     FlutterDownloader.registerCallback(downloadCallback);
 
